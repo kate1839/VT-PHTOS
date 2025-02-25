@@ -1,0 +1,89 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    overflow: hidden; /* Mencegah scroll default */
+}
+
+/* Header untuk username */
+header#username-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 10px;
+    z-index: 10;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Username dalam header */
+#username-link {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+#username-link:hover {
+    color: #ff2a55; /* Warna merah khas TikTok saat hover */
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#feed {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Mencegah scroll default */
+}
+
+/* Setiap post */
+.post {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.7s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Post pertama langsung terlihat */
+.post.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Gambar fullscreen */
+.post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hilangkan username dari dalam gambar */
+.username {
+    display: none;
+}
